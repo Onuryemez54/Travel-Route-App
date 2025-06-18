@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "id": "d22aae40-f522-4754-9da5-275ae7e7d932",
+      "firstName": "Onur",
+      "lastName": "Yemez",
+      "email": "onuryemez@gmail.com",
+      "password": "123456",
+      "cities": {
+        "planned": [
+          {
+            "id": "fff5505e-e12c-439d-a5cc-c7e4720bb888",
+            "cityName": "Oslo",
+            "countryName": "Norway",
+            "countryCode": "no",
+            "date": "2025-06-18T16:09:15.459Z",
+            "notes": "",
+            "position": {
+              "lat": "59.9133301",
+              "lng": "10.7389701"
+            },
+            "category": "planned",
+            "todoList": [
+              {
+                "id": "0e16bed7-7abf-4e45-a47f-af1ffe9308de",
+                "text": "visit Parliament Building",
+                "completed": true
+              },
+              {
+                "id": "6e5d38cb-1b54-4036-a48a-8651dacdd403",
+                "text": "visit Athenæum",
+                "completed": false
+              }
+            ]
+          },
+          {
+            "id": "3aa58c3a-38e7-4163-a1f5-fa43f104f347",
+            "cityName": "Stockholm",
+            "countryName": "Sweden",
+            "countryCode": "se",
+            "date": "2026-06-15T16:15:39.000Z",
+            "notes": "",
+            "position": {
+              "lat": "59.29427135860209",
+              "lng": "18.094482421875004"
+            },
+            "category": "planned"
+          }
+        ],
+        "visited": [
+          {
+            "id": "e6986277-c587-4eee-b461-0da9b16ca4a0",
+            "cityName": "Istanbul",
+            "countryName": "Turkey",
+            "countryCode": "tr",
+            "date": "2023-06-15T16:08:45.000Z",
+            "notes": "",
+            "position": {
+              "lat": "41.0384236508958",
+              "lng": "28.7841796875"
+            },
+            "category": "visited",
+            "isFavorite": true
+          },
+          {
+            "id": "c0460c06-f376-49fb-b6a3-b5230c5febb2",
+            "cityName": "Paris",
+            "countryName": "France",
+            "countryCode": "fr",
+            "date": "2025-06-18T16:15:04.068Z",
+            "notes": "",
+            "position": {
+              "lat": "48.8534951",
+              "lng": "2.3483915"
+            },
+            "category": "visited",
+            "isFavorite": true
+          },
+          {
+            "id": "54fbe3c4-8878-48b8-a05c-aea7fac2c620",
+            "cityName": "Kocaeli",
+            "countryName": "Turkey",
+            "countryCode": "tr",
+            "date": "2025-06-18T16:15:19.153Z",
+            "notes": "",
+            "position": {
+              "lat": "40.76482379539136",
+              "lng": "29.926757812500004"
+            },
+            "category": "visited"
+          },
+          {
+            "id": "16087b15-bda9-49b2-bdd6-6ff47ecadf16",
+            "cityName": "Bolu",
+            "countryName": "Turkey",
+            "countryCode": "tr",
+            "date": "2025-06-18T16:15:21.987Z",
+            "notes": "",
+            "position": {
+              "lat": "40.69790560883633",
+              "lng": "31.486816406250004"
+            },
+            "category": "visited"
+          },
+          {
+            "id": "07a80612-7b47-4121-a191-4760f8aec05f",
+            "cityName": "Eskişehir",
+            "countryName": "Turkey",
+            "countryCode": "tr",
+            "date": "2025-06-18T16:15:25.084Z",
+            "notes": "",
+            "position": {
+              "lat": "39.767245004217635",
+              "lng": "30.212402343750004"
+            },
+            "category": "visited"
+          }
+        ]
+      }
+    }
+  ]
+}
