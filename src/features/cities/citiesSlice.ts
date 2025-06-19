@@ -127,7 +127,7 @@ export const deleteCity = createAsyncThunk(
 );
 
 export const saveTodoList = createAsyncThunk(
-  "cities/updateTodoList",
+  "cities/saveTodoList",
   async (
     {
       userId,
@@ -156,6 +156,55 @@ export const saveTodoList = createAsyncThunk(
       return { updatedCities, currentCity: updatedCity };
     } catch (err) {
       let message = "Failed to update todo list";
+      if (err instanceof Error) {
+        message = err.message;
+      }
+      return rejectWithValue(message);
+    }
+  }
+);
+
+export const toggleFavoriteCity = createAsyncThunk(
+  "cities/toggleFavoriteCity",
+  async (
+    {
+      userId,
+      cityId,
+    }: {
+      userId: string;
+      cityId: string;
+    },
+    { getState, rejectWithValue }
+  ) => {
+    const state = getState() as RootState;
+    const { visited, planned } = state.cities.cities;
+
+    const cityToUpdate = visited.find((city) => city.id === cityId);
+    if (!cityToUpdate) {
+      return rejectWithValue("City not found in visited list.");
+    }
+
+    const updatedCity = {
+      ...cityToUpdate,
+      isFavorite: !cityToUpdate.isFavorite,
+    };
+
+    const updatedVisited = visited.map((city) =>
+      city.id === cityId ? updatedCity : city
+    );
+
+    const updatedCities: CitiesType = {
+      visited: updatedVisited,
+      planned,
+    };
+
+    try {
+      await axiosInstance.patch(`/users/${userId}`, {
+        cities: updatedCities,
+      });
+      return { updatedCities, currentCity: updatedCity };
+    } catch (err) {
+      let message = "Failed to toggle favorite status.";
       if (err instanceof Error) {
         message = err.message;
       }
@@ -218,18 +267,6 @@ const citiesSlice = createSlice({
       state.isLoading = initialState.isLoading;
       state.error = initialState.error;
       state.isFetching = initialState.isFetching;
-    },
-    toggleFavoriteCity: (state, action) => {
-      const { cityId } = action.payload;
-      const visited = state.cities.visited;
-      const updatedVisited = visited.map((city) =>
-        city.id === cityId ? { ...city, isFavorite: !city.isFavorite } : city
-      );
-      state.cities.visited = updatedVisited;
-      state.currentCity =
-        state.currentCity && state.currentCity.id === cityId
-          ? { ...state.currentCity, isFavorite: !state.currentCity.isFavorite }
-          : state.currentCity;
     },
     toggleTodoInCity: {
       prepare: (cityId: string, todoId: string) => ({
@@ -334,11 +371,24 @@ const citiesSlice = createSlice({
       .addCase(moveCityToVisited.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
+      })
+      // toggleFavoriteCityy
+      .addCase(toggleFavoriteCity.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(toggleFavoriteCity.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.cities = action.payload.updatedCities;
+        state.currentCity = action.payload.currentCity;
+        state.error = null;
+      })
+      .addCase(toggleFavoriteCity.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload as string;
       });
   },
 });
 
-export const { resetCitiesState, toggleFavoriteCity, toggleTodoInCity } =
-  citiesSlice.actions;
+export const { resetCitiesState, toggleTodoInCity } = citiesSlice.actions;
 
 export default citiesSlice.reducer;

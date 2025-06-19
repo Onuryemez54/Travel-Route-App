@@ -72,7 +72,12 @@ export const City = () => {
               currentCity.isFavorite ? "text-red-600" : "text-stone-200/80"
             } `}
             onClick={() =>
-              dispatch(toggleFavoriteCity({ cityId: currentCity.id }))
+              dispatch(
+                toggleFavoriteCity({
+                  userId: user?.id || "",
+                  cityId: currentCity.id,
+                })
+              )
             }
           >
             {currentCity.isFavorite ? (
