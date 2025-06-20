@@ -5,6 +5,7 @@
 A fully responsive travel planning app built with React, Vite, and TypeScript. Plan your trips by adding cities on an interactive map, manage to-dos, favorite your places, and track your travel history — all with user authentication powered by JSON Server.
 
 🎯 **Key Features**
+
 🗺️ **Interactive Map**:
 Add cities as visited or planned by simply selecting locations on the map using Leaflet and React Leaflet.
 
@@ -80,7 +81,7 @@ Installation
 
 # Clone the repository
 
-git clone https://github.com/yourusername/travel-route.git
+git clone https://github.com/Onuryemez54/Travel-Route-App.git
 cd travel-route
 
 # Install dependencies
