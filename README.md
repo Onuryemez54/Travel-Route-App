@@ -98,7 +98,7 @@ This project is thoroughly tested using the following tools:
 To run the test suite:
 
 ````bash
-npm run test
+npm run test / npm t
 
 To run in watch mode:
 
@@ -109,7 +109,7 @@ To launch the interactive Vitest UI:
 npm run test:ui
 
 
-## ⚡ Getting Started
+### ⚡ Getting Started
 
 ### Prerequisites
 
@@ -131,7 +131,7 @@ yarn install
 ## Running the Project
 
 # Start JSON Server (mock API backend)
-npm run json-server
+npm run server
 
 # Start development server (Vite)
 npm run dev
