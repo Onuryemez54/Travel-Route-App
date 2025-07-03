@@ -97,7 +97,7 @@ This project is thoroughly tested using the following tools:
 
 To run the test suite:
 
-````bash
+```bash
 npm run test / npm t
 
 To run in watch mode:
@@ -107,10 +107,11 @@ npm run test:watch
 To launch the interactive Vitest UI:
 
 npm run test:ui
+```
 
+## ⚡ Getting Started
 
-### ⚡ Getting Started
-
+```bash
 ### Prerequisites
 
 - Node.js (v16+ recommended)
@@ -118,7 +119,7 @@ npm run test:ui
 
 ### Installation
 
-```bash
+
 git clone https://github.com/Onuryemez54/Travel-Route-App.git
 cd travel-route
 
@@ -135,11 +136,10 @@ npm run server
 
 # Start development server (Vite)
 npm run dev
-
+```
 
 📬 **Contact**
 
 Created by Onur Yemez.
 Feel free to reach out!
 🔗 [GitHub Profile](https://github.com/Onuryemez54)
-````
