@@ -139,6 +139,7 @@ export const Form = () => {
   return (
     <div className="px-4">
       <form
+        data-testid="form"
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col w-full gap-2 px-6 py-5 mt-3 bg-gray-700 rounded-lg text-stone-300"
       >
@@ -161,7 +162,11 @@ export const Form = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="date" className="font-medium text-md ">
+          <label
+            data-testid="date"
+            htmlFor="date"
+            className="font-medium text-md "
+          >
             When did you go to {cityName || "the city"} or will go?
           </label>
           <Controller

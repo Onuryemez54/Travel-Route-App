@@ -1,4 +1,4 @@
-import type { TodoItem } from "../../components/cityDetailComponents/AddTodoList";
+import type { TodoItem } from "../../utils/hooks/useTodoList";
 
 export interface City {
   id: string;

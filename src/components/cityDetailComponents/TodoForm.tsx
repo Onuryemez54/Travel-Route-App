@@ -8,7 +8,11 @@ interface TodoFormTypes {
 
 export const TodoForm = ({ todo, setTodo, onAddTodo }: TodoFormTypes) => {
   return (
-    <form onSubmit={onAddTodo} className="w-full max-w-md">
+    <form
+      data-testid="todo-form"
+      onSubmit={onAddTodo}
+      className="w-full max-w-md"
+    >
       <input
         value={todo}
         onChange={(e) => setTodo(e.target.value)}

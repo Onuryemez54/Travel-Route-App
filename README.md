@@ -1,6 +1,6 @@
 # React + TypeScript + Vite
 
-🚀 **Travel Route** — A fully responsive travel planning app...
+🚀 **Travel Route** — A fully responsive travel planning app to help you organize your travel experiences, manage todos, and explore cities around the world.
 
 A fully responsive travel planning app built with React, Vite, and TypeScript. Plan your trips by adding cities on an interactive map, manage to-dos, favorite your places, and track your travel history — all with user authentication powered by JSON Server.
 
@@ -42,7 +42,13 @@ Clean and modern UI powered by Tailwind CSS, ensuring smooth use on all device s
 
 ![Responsive Screen](./public/responsive.png)
 
-🛠️ Robust State Management:
+🧪 **Tests**
+_Example of the interactive Vitest UI where you can view test results in real time._
+
+![Vitest UI Screen](./public/vitest-ui.png)
+
+🛠️ **Robust State Management**:
+
 Managed with Redux Toolkit and persisted using redux-persist to save your app state.
 
 📝 Effortless Forms:
@@ -71,41 +77,69 @@ Real-time toast notifications powered by React Hot Toast keep you informed of al
 - React Icons Icon library ^5.5.0
 - React Hot Toast Notification system ^2.5.2
 
-⚡ Getting Started
-Prerequisites
-Node.js (v16+ recommended)
+🧪 **Tests**
 
-npm or yarn
+This project is thoroughly tested using the following tools:
 
-Installation
+- [Vitest](https://vitest.dev/) — Fast and modern unit testing framework
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) — For component-level testing with a focus on user behavior
+- [MSW (Mock Service Worker)](https://mswjs.io/) — To mock API requests for reliable and isolated tests
 
-# Clone the repository
+### ✅ What’s Tested?
 
+- Redux async thunks (authentication, CRUD for cities)
+- React components (e.g., Navbar, CityItem, AddTodoList,Form)
+- Custom hooks (`useLocalStorageTodos`, etc.)
+- Form submissions (login, register, todo forms)
+- User interactions (click, input, keyboard events)
+
+### ▶️ Running Tests
+
+To run the test suite:
+
+````bash
+npm run test
+
+To run in watch mode:
+
+npm run test:watch
+
+To launch the interactive Vitest UI:
+
+npm run test:ui
+
+
+## ⚡ Getting Started
+
+### Prerequisites
+
+- Node.js (v16+ recommended)
+- npm or yarn
+
+### Installation
+
+```bash
 git clone https://github.com/Onuryemez54/Travel-Route-App.git
 cd travel-route
 
 # Install dependencies
-
 npm install
-
 # or
-
 yarn install
 
-# Running the Project
+
+## Running the Project
 
 # Start JSON Server (mock API backend)
-
-bash
-
 npm run json-server
 
 # Start development server (Vite)
-
 npm run dev
+
 
 📬 **Contact**
 
 Created by Onur Yemez.
 Feel free to reach out!
 🔗 [GitHub Profile](https://github.com/Onuryemez54)
+````

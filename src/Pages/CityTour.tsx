@@ -48,6 +48,7 @@ const CityTour = () => {
 
       try {
         const wikiData = await fetchWikiInfo(cityName);
+
         const placesData = await fetchPlacesData(
           wikiData?.coordinates.lat || urlLat,
           wikiData?.coordinates.lon || urlLng

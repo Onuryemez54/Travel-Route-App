@@ -30,7 +30,7 @@ export const UpdateTodoList = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center  gap-3 ">
+      <div className="flex flex-col items-center  gap-3 slide-in-bottom-nearer ">
         {hasTodos && (
           <TodoListDisplay
             mode="edit"

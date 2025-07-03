@@ -57,7 +57,7 @@ export const VisitedCities = () => {
         </div>
       )}
 
-      <ul className="flex flex-col w-full gap-2 mt-2">
+      <ul data-testid="visitedList" className="flex flex-col w-full gap-2 mt-2">
         {displayedList.map((city) => (
           <CityItem key={city.id} city={city} />
         ))}

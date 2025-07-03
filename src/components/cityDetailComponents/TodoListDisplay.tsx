@@ -32,6 +32,7 @@ export const TodoListDisplay = ({
                   <span className="text-sm font-bold">{i + 1}.</span>
                   {displayEdit ? (
                     <input
+                      data-testid="todo-edit"
                       value={todo.text}
                       onChange={(e) =>
                         onChange && onChange(todo.id, e.target.value)
@@ -56,6 +57,7 @@ export const TodoListDisplay = ({
                     Edit
                   </button>
                   <button
+                    title="Remove todo"
                     onClick={() => onDelete && onDelete(todo.id)}
                     className="text-lg font-semibold text-red-500 transition-colors duration-300 cursor-pointer hover:text-red-700"
                   >

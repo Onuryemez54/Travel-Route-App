@@ -31,7 +31,9 @@ export const CityItem = ({ city }: { city: City }) => {
         </div>
 
         <div className="flex items-center gap-2">
-          <time className="text-sm font-semibold ">{formatDate(date)}</time>
+          <time data-testid="date" className="text-sm font-semibold ">
+            {formatDate(date)}
+          </time>
 
           <button
             className="h-8 text-lg font-normal transition-all duration-200 bg-gray-800 rounded-full cursor-pointer aspect-square text-stone-200 hover:bg-amber-400 hover:text-gray-900"

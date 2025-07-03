@@ -26,7 +26,10 @@ export const PlacesList = ({ places, selectedPlaceName, onSelect }: Props) => {
             Interesting places
           </h3>
 
-          <ul className="grid grid-cols-2 gap-2 w-full sm:w-40 md:w-50 2xl:w-60 sm:block max-h-[100vh] scroll divide-y divide-green-400 rounded-2xl shadow-2xl">
+          <ul
+            data-testid="list"
+            className="grid grid-cols-2 gap-2 w-full sm:w-40 md:w-50 2xl:w-60 sm:block max-h-[100vh] scroll divide-y divide-green-400 rounded-2xl shadow-2xl"
+          >
             {sortedPlacesList.map((place) => (
               <li
                 key={place.xid}
@@ -48,5 +51,3 @@ export const PlacesList = ({ places, selectedPlaceName, onSelect }: Props) => {
     </div>
   );
 };
-
-// className="w-40  sm:w-60 max-h-[100vh] scroll divide-y divide-green-400 rounded-2xl shadow-2xl "

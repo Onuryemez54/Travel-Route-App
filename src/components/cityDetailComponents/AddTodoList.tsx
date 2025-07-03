@@ -25,7 +25,7 @@ export const AddTodoList = () => {
   });
 
   return (
-    <div className="flex flex-col items-center gap-2 text-white">
+    <div className="flex flex-col items-center gap-2 text-white slide-in-bottom-nearer">
       <TodoForm
         todo={todoInput}
         setTodo={setTodoInput}

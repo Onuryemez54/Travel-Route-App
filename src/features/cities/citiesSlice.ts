@@ -7,6 +7,7 @@ import type { CitiesState, CitiesType, City } from "./citiesTypes";
 import axiosInstance from "../../api/axiosInstance";
 import type { RootState } from "../../app/rootTypes";
 import type { TodoItem } from "../../utils/hooks/useTodoList";
+
 const initialState: CitiesState = {
   cities: {
     planned: [],
@@ -372,7 +373,7 @@ const citiesSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload as string;
       })
-      // toggleFavoriteCityy
+      // toggleFavoriteCity
       .addCase(toggleFavoriteCity.pending, (state) => {
         state.isLoading = true;
       })

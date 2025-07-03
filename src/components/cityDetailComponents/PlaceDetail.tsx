@@ -3,7 +3,10 @@ import type { PlaceDetailType } from "../../services/detailServicesTypes";
 
 export const PlaceDetail = ({ place }: { place: PlaceDetailType }) => {
   return (
-    <div className="max-w-full mx-auto p-4 slide-in-right rounded-2xl shadow-2xl">
+    <div
+      data-testid="placeDetail"
+      className="max-w-full mx-auto p-4 slide-in-right rounded-2xl shadow-2xl"
+    >
       <h2 className="text-xl font-bold mb-3 text-center">{place.name}</h2>
       {place.preview?.source && (
         <img
@@ -12,7 +15,7 @@ export const PlaceDetail = ({ place }: { place: PlaceDetailType }) => {
           className="w-full h-64 sm:h-100 2xl:h-120 object-cover rounded-2xl mb-4"
         />
       )}
-      <p className="text-gray-700">
+      <p data-testid="extract" className="text-gray-700">
         {place.wikipedia_extracts?.text || "No description"}
       </p>
       <div className="flex flex-col gap-2 sm:flex-row sm:justify-between mt-10">

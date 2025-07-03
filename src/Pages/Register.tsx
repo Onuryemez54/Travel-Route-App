@@ -65,7 +65,7 @@ const Register = () => {
           <h2>Register</h2>
           <div className="form-row-container">
             <div className="form-row">
-              <label htmlFor="username" className="sm:w-40 ">
+              <label htmlFor="firstname" className="sm:w-40">
                 First Name
               </label>
               <input
@@ -153,6 +153,7 @@ const Register = () => {
                 })}
               />
               <button
+                aria-label="toggle"
                 type="button"
                 onClick={() => setIsShowPassword(!isShowPassword)}
                 className="absolute text-gray-400 right-3 top-1/2 sm:transform sm:-translate-y-1/2"

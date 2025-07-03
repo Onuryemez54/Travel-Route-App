@@ -11,7 +11,7 @@ const PageNotFound = () => {
         Page Not Found
       </h2>
 
-      <p className="max-w-md mt-2 text-gray-500">
+      <p className="max-w-md mt-2 text-gray-500" data-testid="error-message">
         The page you are looking for doesn’t exist or has been moved. Maybe
         check the URL or return to the homepage.
       </p>

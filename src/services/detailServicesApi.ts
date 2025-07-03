@@ -17,7 +17,6 @@ export const fetchWikiInfo = async (
     const data = res.data;
     if (!data || !data.title)
       throw new Error("No data found for the given place name");
-
     return {
       coordinates: {
         lat: data.coordinates?.lat,
@@ -25,9 +24,12 @@ export const fetchWikiInfo = async (
       },
       title: data.title,
       description: data.description,
-      thumbnail: data.thumbnail
-        ? data.originalimage.source || data.thumbnail.source
-        : null,
+      thumbnail:
+        data.originalimage && typeof data.originalimage === "object"
+          ? data.originalimage.source
+          : data.thumbnail && typeof data.thumbnail === "object"
+          ? data.thumbnail?.source
+          : null,
       extract: data.extract,
     };
   } catch (err) {

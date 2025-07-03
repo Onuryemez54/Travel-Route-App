@@ -100,6 +100,7 @@ const Login = () => {
                 })}
               />
               <button
+                aria-label="toggle"
                 type="button"
                 onClick={() => setIsShowPassword((prev) => !prev)}
                 className="absolute cursor-pointer text-gray-400 right-3 top-1/2 sm:transform sm:-translate-y-1/2"

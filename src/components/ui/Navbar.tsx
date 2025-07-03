@@ -47,7 +47,10 @@ export const Navbar = () => {
   return (
     <div className="fixed top-0 z-50 flex items-center justify-between w-full p-4 bg-gray-800 border-b-2 shadow-2xl border-green-400/50 text-stone-200 text-md md:text-lg md:px-6 lg:flex-col lg:gap-4 2xl:text-xl ">
       <Logo className="rounded-full h-13 sm:h-16 md:h-20 lg:h-24 " />
-      <ul className="items-center hidden px-3 sm:flex sm:gap-10 md:gap-12 lg:gap-15 ">
+      <ul
+        data-testid="navItems"
+        className="items-center hidden px-3 sm:flex sm:gap-10 md:gap-12 lg:gap-15 "
+      >
         {navbarItemsList}
       </ul>
       <button
