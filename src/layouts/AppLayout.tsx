@@ -21,7 +21,11 @@ const AppLayout = () => {
       <main className="relative w-full overflow-hidden">
         {isLoading && <PageLoader />}
         <Map />
-        <div className="absolute top-[11px] left-2 z-30 ">
+        <div
+          className={`absolute top-[11px] left-2 z-30 transition-all duration-100 ${
+            isSidebarOpen ? "hover:-translate-x-0.5" : "hover:translate-x-0.5"
+          }`}
+        >
           <Button type="show" click={() => dispatch(toggleSidebar())}>
             {isSidebarOpen ? (
               <TbLayoutSidebarRightExpandFilled size={20} />

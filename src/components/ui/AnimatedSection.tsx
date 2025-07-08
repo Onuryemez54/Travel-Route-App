@@ -29,12 +29,7 @@ export const AnimatedSection = ({
   }, []);
 
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ${
-        visible ? animation : "opacity-0"
-      }`}
-    >
+    <div ref={ref} className={visible ? animation : "opacity-0"}>
       {children}
     </div>
   );

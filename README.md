@@ -121,7 +121,7 @@ npm run test:ui
 
 
 git clone https://github.com/Onuryemez54/Travel-Route-App.git
-cd travel-route
+
 
 # Install dependencies
 npm install
