@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { TodoItem } from "../../utils/hooks/useTodoList";
+import { HiPencil, HiTrash } from "react-icons/hi";
 
 interface TodoListDisplayProps {
   todos: TodoItem[];
@@ -52,16 +53,16 @@ export const TodoListDisplay = ({
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setDisplayEdit((p) => !p)}
-                    className="text-orange-400 transition-colors duration-300 cursor-pointer hover:text-orange-600 "
+                    className="text-orange-400 transition-all duration-300 cursor-pointer hover:text-orange-600 hover:translate-y-[-2px]"
                   >
-                    Edit
+                    <HiPencil size={20} />
                   </button>
                   <button
                     title="Remove todo"
                     onClick={() => onDelete && onDelete(todo.id)}
-                    className="text-lg font-semibold text-red-500 transition-colors duration-300 cursor-pointer hover:text-red-700"
+                    className="text-lg font-semibold text-red-500 transition-all duration-300 cursor-pointer hover:text-red-700 hover:rotate-45"
                   >
-                    X
+                    <HiTrash size={20} />
                   </button>
                 </div>
               </div>

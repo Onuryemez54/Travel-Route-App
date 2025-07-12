@@ -3,6 +3,7 @@ import type { City } from "../citiesTypes";
 import { countryCodeToFlagSrc, formatDate } from "../../../utils/helpers";
 import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { deleteCity } from "../citiesSlice";
+import { HiTrash } from "react-icons/hi";
 
 export const CityItem = ({ city }: { city: City }) => {
   const currentUser = useAppSelector((state) => state.auth.currentUser);
@@ -36,14 +37,14 @@ export const CityItem = ({ city }: { city: City }) => {
           </time>
 
           <button
-            className="h-8 text-lg font-normal transition-all duration-200 bg-gray-800 rounded-full cursor-pointer aspect-square text-stone-200 hover:bg-amber-400 hover:text-gray-900"
+            className=" transition-all duration-200  rounded-full cursor-pointer  hover:text-amber-500 hover:rotate-45  hover:scale-110"
             title="Remove city"
             onClick={(e) => {
               e.preventDefault();
               dispatch(deleteCity({ userId, cityId: id }));
             }}
           >
-            &times;
+            <HiTrash size={20} />
           </button>
         </div>
       </Link>
